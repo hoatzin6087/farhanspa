@@ -9721,184 +9721,207 @@ img.footer-logo-dark {
   ========================================================================== */ 
 
 
+/* Modal Background */
 .modal-bg {
-  display: block; /* Ensure it's visible */
-  background-color: rgba(184, 184, 184, 0.8); /* Make the overlay background dark to obscure content */
+  display: none; /* Hidden by default */
+  background-color: rgba(184, 184, 184, 0.8); /* Dim background */
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   position: fixed; /* Fix to viewport */
   top: 0;
   left: 0;
-  backdrop-filter: blur(2px); /* Blur effect for background */
-  z-index: 1000; /* Behind the modal but above other content */
+  backdrop-filter: blur(2px); /* Blur effect */
+  z-index: 1000; /* Ensure it's above the page content */
 }
 
+/* Modal for All Views (Default) */
 .modal {
-  display: none;
+  display: none; /* Hidden by default */
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 450px;
-  max-height: 50%;
-  background-image: url(../images/heroo-5.jpg);
-  position: fixed; /* Fixed to viewport */
+  justify-content: center; /* Center vertically */
+  width: 90%; /* Relative width for responsiveness */
+  max-width: 450px; /* Limit maximum width */
+  max-height: 70%; /* Limit maximum height */
+  height: auto; /* Auto height for content */
+  background-color: #fff; /* Fallback in case image fails */
+  background-image: url(../images/heroo-5.jpg); /* Background image */
+  background-size: cover;
+  background-position: center;
+  position: fixed; /* Fix to viewport */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(128, 128, 128, 0.164);
-  gap: 20px;
+  box-shadow: 0 4px 10px rgba(128, 128, 128, 0.3); /* Subtle shadow */
+  gap: 20px; /* Space between children */
   padding: 20px;
-  overflow-y: hidden; /* Ensure scroll if needed */
-  z-index: 1010; /* Ensure it's above the background */
+  z-index: 1010; /* Above modal background */
+  overflow: hidden; /* Prevent scrolling */
 }
 
-/* Mobile view styling */
-@media (max-width: 768px) {
-  .modal {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 450px;
-    max-height: 50%;
-    background-image: url(../images/heroo-5.jpg);
-    position: fixed; /* Fixed to viewport */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(128, 128, 128, 0.164);
-    gap: 20px;
-    padding: 20px;
-    overflow-y: hidden; /* Ensure scroll if needed */
-    z-index: 1010; /* Ensure it's above the background */
-  }
-}
-
-
-.blurred-bg {
-  position: relative;
-  background-image: url(../images/hero-5.jpg);
-  background-size: cover;
-  background-position: center;
-}
+/* Image Styling - Center the image */
 .reward-img {
-  margin-left: 8%;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
+  width: 100%; /* Image takes full container width */
+  max-width: 200px; /* Reduced max-width for smaller size */
+  display: block; /* Make it block-level to center it */
+  margin: 0 auto; /* Center the image horizontally */
+  border-radius: 8px; /* Rounded corners */
 }
 
-@media (max-width: 768px) {
-  .reward-img {
-    margin-left: 13%;
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-  }
+/* Title */
+.title {
+  font-size: 20px; /* Smaller font size for title */
+  font-weight: 600;
+  text-align: center;
+  color: #fff; /* Title color set to white */
+  margin: 10px 0; /* Space above and below */
 }
 
+/* Description */
+.description {
+  font-size: 14px; /* Slightly smaller font size */
+  color: gray;
+  line-height: 1.5; /* Better readability */
+  margin: 10px 0; /* Space around the text */
+}
+
+/* Buttons */
+.ext-btn-pop-up,
+.whatsapp-btn-pop-up {
+  display: inline-block;
+  font-size: 12px; /* Same font size for both buttons */
+  font-weight: 600;
+  padding: 0 16px; /* Padding for horizontal alignment */
+  height: 40px; /* Fixed height for both buttons */
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 20px;
+  margin: 10px 0; /* Uniform spacing between buttons */
+  text-align: center; /* Center text horizontally */
+  line-height: 40px; /* Vertical centering of text */
+  cursor: pointer;
+}
+
+.ext-btn-pop-up {
+  background-color: lightseagreen;
+}
+
+.whatsapp-btn-pop-up {
+  background-color: #0fbc49;
+}
+
+/* Close Button */
 .close-btn {
   color: #00a14e;
   position: absolute;
   right: 20px;
   top: 10px;
-  font-size: 30px;
+  font-size: 25px; /* Reduced font size */
   font-weight: 600;
-  filter: drop-shadow(0 0 0 rgba(124, 124, 124, 0.468));
   cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .close-btn {
-    color: #00a14e;
-    position: absolute;
-    right: 60px;
-    top: 10px;
-    font-size: 30px;
-    font-weight: 600;
-    filter: drop-shadow(0 0 0 rgba(124, 124, 124, 0.468));
-    cursor: pointer;
-  }
-}
-
-.close-btn .hover--black:hover {
-  color: red;
   transition: color 0.2s ease-in-out;
 }
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-.title {
-  display: flex;
-  color: #fff;
-  font-size: 22px;
-  font-weight: 600;
-  text-align: center;
+
+.close-btn:hover {
+  color: red;
 }
 
-/* @media (max-width: 768px) {
+/* Modal Visibility with Checkbox */
+#modal-toggle:checked + .modal-bg {
+  display: block; /* Show modal background when checkbox is checked */
+}
+
+#modal-toggle:checked + .modal-bg .modal {
+  display: flex; /* Show modal when checkbox is checked */
+}
+
+/* Horizontal Layout for Larger Screens (System View) */
+@media (min-width: 1024px) {
+  .modal {
+    flex-direction: row; /* Horizontal layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Align items vertically */
+    width: 50%; /* Smaller width for system screens */
+    max-width: 600px; /* Cap max width */
+    height: auto; /* Auto height to fit content */
+    gap: 20px; /* Reduced space between sections */
+    padding: 20px;
+  }
+
+  /* Increase image size for system screens */
+  .reward-img {
+    width: 40%; /* Increased width for system screens */
+    max-width: 300px; /* Increase max-width */
+    margin: 0 auto; /* Center image horizontally */
+  }
+
   .info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-items: center;
+    align-items: center; /* Center title and buttons */
+    text-align: center; /* Center-align text */
+    gap: 15px; /* Space between title and buttons */
   }
-}
-@media (max-width: 768px) {
+
   .title {
-    display: flex;
-    color: #fff;
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
+    font-size: 18px; /* Reduced font size */
   }
-} */
 
-.description {
-  font-size: 14px;
-  color: gray;
-  text-align: center;
+  /* Move WhatsApp button up and Ext button down */
+  .whatsapp-btn-pop-up {
+    margin-bottom: 20px; /* Move it up by reducing the bottom margin */
+  }
+
+  .ext-btn-pop-up {
+    margin-top: 20px; /* Move it down by increasing the top margin */
+  }
 }
 
-/* Button in Pop-Up */
+/* Vertical and Horizontal Centering for Smaller Devices (Mobile View) */
+@media (max-width: 1024px) {
+  .modal {
+    flex-direction: column; /* Vertical layout */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    width: 90%; /* Adjust width */
+    padding: 15px;
+    gap: 20px; /* Add space between sections */
+  }
 
+  .reward-img {
+    max-width: 200px; /* Adjust max image size */
+    margin-bottom: 20px; /* Add space below image */
+  }
 
-.ext-btn-pop-up {
-  position: absolute;
-  margin-top: 80px;
-  left: 65px;
-  display: inline-block;
-  font-size: var(--ext-font-size);
-  color: #fff !important;
-  padding: 6px 12px;
-  /* padding-left: 65px; */
-  font-weight: 600;
-  border-radius: 20px;
-  overflow: hidden;
-  text-transform: uppercase;
-  background-color: lightseagreen;
+  .info {
+    text-align: center; /* Center-align content */
+  }
+
+  .ext-btn-pop-up,
+  .whatsapp-btn-pop-up {
+    margin: 10px 0; /* Space between buttons */
+  }
 }
 
-.whatsapp-btn-pop-up {
-  margin-top: 80px;
-  left: 210px;
-  position: absolute;
-  display: inline-block;
-  font-size: var(--ext-font-size);
-  color: #fff !important;
-  padding: 6px 12px;
-  font-weight: 600;
-  overflow: hidden;
-  text-transform: uppercase;
-  background-color: #0fbc49;
-  border-radius: 20px;
+/* Small Phones */
+@media (max-width: 480px) {
+  .modal {
+    width: 90%;
+    padding: 10px;
+  }
+  .reward-img {
+    max-width: 150px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .description {
+    font-size: 12px;
+  }
+  .close-btn {
+    font-size: 20px;
+  }
 }
 
 
