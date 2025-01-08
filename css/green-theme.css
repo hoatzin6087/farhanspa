@@ -9794,7 +9794,7 @@ img.footer-logo-dark {
 @media (max-width: 768px) {
   .reward-img {
     margin-left: 13%;
-    width: 300px;
+    width: 280px;
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -9811,6 +9811,20 @@ img.footer-logo-dark {
   filter: drop-shadow(0 0 0 rgba(124, 124, 124, 0.468));
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .close-btn {
+    color: #00a14e;
+    position: absolute;
+    right: 60px;
+    top: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    filter: drop-shadow(0 0 0 rgba(124, 124, 124, 0.468));
+    cursor: pointer;
+  }
+}
+
 .close-btn .hover--black:hover {
   color: red;
   transition: color 0.2s ease-in-out;
