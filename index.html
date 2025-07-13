@@ -628,79 +628,31 @@
 			<!-- MODAL WINDOW (OFFER FORM)
 			============================================= -->
 
-			<div class="modal-bg">
-				<div id="form-modal" class="modal">
-					<div id="close-modal" class="close-btn">✕</div>
-					<img src="images/popup-farhanspa.jpg" alt="" class="reward-img">
-					<div class="info">
-						<p class="title">Congratulation 🎉 <br> You got a Special Offer 🎊🎀</p>
+			<!-- Modal Trigger (you can place it anywhere on the page) -->
+			 <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content" style="background-color: rgb(24, 43, 41);">
 
-						<a href="tel:+971509508247" class="ext-btn-pop-up">
-							Call Now
-						</a>
-						&nbsp;
-						<a href="https://wa.me/971509508247" class="whatsapp-btn-pop-up">
-							<span class="flaticon-whatsapp"> </span>
-							Whatsapp Now
-						</a>
+						<div class="modal-body position-relative p-0">
+							<button type="button" class="btn-close bg-danger p-3" data-dismiss="modal" aria-label="Close" style="position: absolute; top: 10px; right: 10px; z-index: 1051; color: white; font-weight: bold;">✕</button>
+
+							
+							<img src="images/popup-farhanspa.jpg" id="modalImage" class="img-fluid" alt="Offer">
+							<div class="d-flex justify-content-center mb-3 mt-3">
+								<a class="btn btn-success py-2 px-4 mx-2 animate__animated animate__fadeInUp"
+									href="https://wa.me/971509508247" target="_blank">
+									WhatsApp
+								</a>
+								<a class="btn btn-light py-2 px-4 mx-2 animate__animated animate__fadeInUp"
+									href="tel:+971509508247">
+									Call Now
+								</a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
-
-			<!-- MODAL WINDOW (NEWSLETTER FORM)
-			============================================= -->
-
-			<div id="modal-2" class="modal fade" tabindex="-1">
-				 <div class="modal-dialog modal-dialog-centered">
-			        <div class="modal-content">
-
-
-			        	<!-- CLOSE BUTTON -->
-			            <button type="button" class="btn-close ico-10 white-color" data-bs-dismiss="modal" aria-label="Close">
-			            	<span class="flaticon-cancel"></span>
-			            </button>
-			            
-
-			            <!-- MODAL CONTENT -->
-			            <div class="modal-body text-center">
-
-
-		            		<!-- IMAGE -->	
-		            		<div class="modal-body-img">
-		            			<img class="img-fluid" src="images/modal-newsletter-blue.jpg" alt="content-image">
-		            		</div>
-
-
-		            		<!-- NEWSLETTER FORM -->	
-		            		<div class="modal-body-content">
-
-				            	<!-- Title -->	
-								<h5 class="s-24 w-700">Stay up to date with our news, ideas and updates</h5>
-
-								<!-- Form -->
-								<form class="newsletter-form">
-										
-									<div class="input-group">
-										<input type="email" autocomplete="off" class="form-control" placeholder="Your email address" required id="s-email">								
-										<span class="input-group-btn">
-											<button type="submit" class="btn btn--theme hover--theme">Subscribe Now</button>
-										</span>										
-									</div>
-
-									<!-- Newsletter Form Notification -->	
-									<label for="s-email" class="form-notification"></label>
-												
-								</form>	
-
-							</div>	<!-- END NEWSLETTER FORM -->	
-
-
-			            </div>	<!-- END MODAL CONTENT -->
-
-
-					 </div>
-			    </div>
-			</div>	<!-- END MODAL WINDOW (NEWSLETTER FORM) -->	
 
 
 
@@ -797,9 +749,21 @@
 				
 		<!-- Custom Script -->		
 		<script src="js/custom.js"></script>
+		<script>
+			$(window).on('load', function() {
+            	$('#myModal').modal('show');
+        	});
 
+			$(document).ready(function () {
+				$('#myModal').on('shown.bs.modal', function () {
+				$('.modal-backdrop').addClass('modal-backdrop-blur');
+				});
 
-		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
+				$('#myModal').on('hidden.bs.modal', function () {
+				$('.modal-backdrop').removeClass('modal-backdrop-blur');
+				});
+			});
+		</script>		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
 		<!--
 		<script>
 			var _gaq = _gaq || [];

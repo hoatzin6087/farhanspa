@@ -123,7 +123,7 @@
 		});
 		
 		// Display the modal on page load
-		$(".modal-bg, #form-modal").show();
+		// $(".modal-bg, #form-modal").show();
 
 		// Attach click event to close button
 		$(".close-btn").on("click", function () {
